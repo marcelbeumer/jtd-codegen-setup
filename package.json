@@ -1,0 +1,26 @@
+{
+  "name": "jtd-codegen-setup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean-schemas": "bin/clean-schemas.sh",
+    "build-schemas": "npm run clean-schemas && bin/build-schemas.sh",
+    "example": "esr src/example.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelbeumer/jtd-codegen-setup.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelbeumer/jtd-codegen-setup/issues"
+  },
+  "homepage": "https://github.com/marcelbeumer/jtd-codegen-setup#readme",
+  "dependencies": {
+    "esbuild-runner": "^2.2.0",
+    "jtd": "^0.1.1",
+    "typescript": "^4.3.4"
+  }
+}
