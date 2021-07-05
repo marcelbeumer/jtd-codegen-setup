@@ -4,4 +4,22 @@ export interface LoginResult {
   person: Person;
 }
 
-export type Person = any;
+export interface Individual {
+  firstName: string;
+  lastName: string;
+  metadata: Metadata;
+}
+
+export interface Metadata {
+  a: string;
+  b: string;
+  c: string;
+}
+
+export interface Person {
+  father: Individual;
+  firstName: string;
+  lastName: string;
+  metadata: Metadata;
+  mother: Individual;
+}

@@ -1,13 +1,10 @@
-// import { personSchema } from "../person/schema";
+import { personSchema } from "../person/schema";
+import { flattenDefinitions } from "../../jtd-helpers";
 
 export const loginResultSchema = {
-  definitions: {
-    // TODO
-    // Write helper fun that "merges" schema definitions
-    // and throw errors when there are naming conflicts
-    // person: personSchema,
-    person: {},
-  },
+  definitions: flattenDefinitions({
+    person: personSchema,
+  }),
   properties: {
     person: { ref: "person" },
   },
