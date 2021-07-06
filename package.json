@@ -21,6 +21,7 @@
   "dependencies": {
     "esbuild-runner": "^2.2.0",
     "jtd": "^0.1.1",
+    "neverthrow": "^4.2.2",
     "typescript": "^4.3.4"
   }
 }
