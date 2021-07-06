@@ -27,7 +27,7 @@ export function validateWithSchema<T = unknown>(
   const label = name ? `"${name}"` : `<unknown>`;
   if (result.length) {
     return err(
-      new Error(`Schema ${label} validation failed: ${JSON.stringify(result)}`),
+      new Error(`Invalid schema for ${label}: ${JSON.stringify(result)}`),
     );
   }
   return ok(o);
