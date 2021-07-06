@@ -14,16 +14,20 @@ type Definitions = {
 
 export function flattenDefinitions(
   defsIn: Definitions,
+  opts: { allowDuplicates?: boolean } = {},
   defsOut: Definitions = {},
 ): Definitions {
   for (const [name, def] of Object.entries(defsIn)) {
-    if (typeof defsOut[name] !== "undefined") {
+    if (!opts.allowDuplicates && typeof defsOut[name] !== "undefined") {
       throw new Error(`Duplicate definition name "${name}"`);
     }
-    defsOut[name] = def;
+
+    const defCopy = { ...def };
+    delete defCopy.definitions;
+    defsOut[name] = defCopy;
+
     if (def.definitions) {
-      flattenDefinitions(def.definitions, defsOut);
-      delete def.definitions;
+      flattenDefinitions(def.definitions, opts, defsOut);
     }
   }
   return defsOut;
